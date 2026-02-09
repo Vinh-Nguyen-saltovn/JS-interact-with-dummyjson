@@ -142,7 +142,7 @@ function renderUsersInfo(users) {
     <td>${user.age}</td>
     <td>${user.gender}</td>
     <td>${user.birthDate}</td>
-    <td><a href='../html/edit.html?id=${user.id}${window.location.search}'><button>Update</button></a></td>
+    <td><a href='../html/edit.html?id=${user.id}'><button>Update</button></a></td>
     `
     tbody.appendChild(tr)
   })
