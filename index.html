@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h1>Login Page</h1>
+
+    <form id="login-form">
+      <div>
+        <label>Username</label>
+        <input type="text" name="username" />
+        <small class="error"></small>
+      </div>
+
+      <div>
+        <label>Password</label>
+        <input type="password" name="password" />
+        <small class="error"></small>
+      </div>
+
+      <button id="submit-button" type="submit">Login</button>
+    </form>
+
+    <div id="users-loading" class="loading hidden">
+      <div class="spinner"></div>
+    </div>
+    <div id="users-error" class="error-box hidden"></div>
+    <script type="module" src="./js/login.js"></script>
+  </body>
+</html>

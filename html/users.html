@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <header id="app-header">
+      <div class="user-info" id="user-info">
+        <div class="user-cover">
+          <img id="user-image" alt="image" />
+          <span id="user-name"></span>
+        </div>
+        <button id="btn-logout">Logout</button>
+      </div>
+    </header>
+
+    <h1>Users List</h1>
+
+    <!-- FILTER -->
+    <div class="cover">
+      <form id="filter-form">
+        <input type="text" placeholder="Search name..." name="search" />
+        <button id="btn-search" type="button">Search</button>
+
+        <select name="sortBy">
+          <option value="">Sort By</option>
+          <option value="firstName">First Name</option>
+          <option value="age">Age</option>
+        </select>
+
+        <select name="order">
+          <option value="asc">ASC</option>
+          <option value="desc">DESC</option>
+        </select>
+
+        <button id="btn-sort" type="button">Sort</button>
+      </form>
+
+      <a class="add-new-button" href="./add_new.html">➕ Add User</a>
+    </div>
+
+    <div id="users-loading" class="loading hidden">
+      <div class="spinner"></div>
+    </div>
+    <div id="users-error" class="error-box hidden"></div>
+
+    <table id="users-table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Birthday</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="user-table-body">
+        <!-- render users -->
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <button id="prev-page">Prev</button>
+      <span id="page-info">Page 1</span>
+      <button id="next-page">Next</button>
+    </div>
+    <script type="module" src="../js/users.js"></script>
+  </body>
+</html>

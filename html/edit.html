@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Detail</title>
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <h1>User Detail</h1>
+
+    <div id="detail-loading" class="loading hidden">Loading...</div>
+    <div id="detail-error" class="error-box hidden"></div>
+
+    <form id="user-form">
+      <div class="user-form-cover">
+        <label>First Name</label>
+        <input type="text" name="firstName" />
+        <small class="error"></small>
+      </div>
+
+      <div class="user-form-cover">
+        <label>Last Name</label>
+        <input type="text" name="lastName" />
+        <small class="error"></small>
+      </div>
+
+      <div class="user-form-cover">
+        <label>Email</label>
+        <input type="email" name="email" />
+        <small class="error"></small>
+      </div>
+
+      <div class="user-form-cover">
+        <label>Age</label>
+        <input type="number" name="age" />
+        <small class="error"></small>
+      </div>
+
+      <div class="user-form-cover">
+        <label>Gender</label>
+        <select name="gender">
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <small class="error"></small>
+      </div>
+
+      <section class="button-cover">
+        <button id="update-btn" type="submit">Update</button>
+        <button id="delete-btn" type="button">Delete</button>
+      </section>
+    </form>
+    <script type="module" src="../js/form.js"></script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+form div {
+  margin-bottom: 12px;
+}
+
+input,
+select,
+button {
+  padding: 6px;
+  width: 250px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.error-box {
+  color: white;
+  background: red;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+.loading {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+}
+
+.pagination {
+  margin-top: 12px;
+}
+
+.danger {
+  background: red;
+  color: white;
+}
+
+/* ***************** users.html */
+
+#users-table {
+  width: 1400px;
+}
+
+#filter-form {
+  width: 600px;
+  display: flex;
+}
+
+.cover {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-new-button {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+.add-new-button:hover {
+  background-color: #cd8090;
+}
+
+/* HEADER  */
+#app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+#user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#btn-logout {
+  padding: 4px 8px;
+  cursor: pointer;
+  width: 8rem;
+  height: 3rem;
+  background-color: blue;
+  color: #ccc;
+  font-size: 1.5rem;
+}
+
+#btn-logout:hover {
+  opacity: 60%;
+}
+#app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+}
+
+#user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#btn-logout {
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.user-cover {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+}
+
+#user-name {
+  font-size: 2rem;
+}
+/* ****************
+add new page */
+#user-form {
+  width: 500px;
+}
+
+.user-form-cover {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ******** edit page */
+.button-cover {
+  display: flex;
+  width: 400px;
+}
+
+#delete-btn {
+  background-color: red;
+  opacity: 100%;
+  color: #fff;
+}
+
+#delete-btn:hover {
+  opacity: 60%;
+}
+
+/*  hiêu ứng loading khi thao tác  */
+.loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* làm mờ màn hình */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+/* spinner */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 6px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ko thao tác được khi đang loading */
+body.loading-active {
+  pointer-events: none;
+  opacity: 0.7;
+  overflow: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
