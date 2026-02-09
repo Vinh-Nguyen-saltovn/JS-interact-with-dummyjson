@@ -1,10 +1,4 @@
-import {
-  showError,
-  clearErrors,
-  showLoading,
-  delay,
-  hideLoading,
-} from './common.js'
+import { showError, clearErrors, showLoading, hideLoading } from './common.js'
 
 const form = document.getElementById('login-form')
 if (form) {
@@ -17,10 +11,10 @@ if (form) {
 
     let isValid = true
 
-    // check validate userName
+    // check validate username
     if (!username.value.trim()) {
       // check username có rỗng hay ko
-      showError(username, 'username is required')
+      showError(username, 'userName is required')
       isValid = false
     } else if (username.value.length < 6) {
       // check length
@@ -40,38 +34,39 @@ if (form) {
     }
 
     if (!isValid) return
-    login()
-  })
 
-  let isSubmitting = false
-  // fetch api
-  async function login() {
-    if (isSubmitting) return
-    isSubmitting = true
-    try {
-      showLoading()
-      await delay(500)
-      const res = await fetch('https://dummyjson.com/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: username.value,
-          password: password.value,
-        }),
-      })
-      if (!res.ok) {
-        const err = await res.json()
-        throw new Error(err.message || 'Login failed')
-      }
-      const data = await res.json()
-      localStorage.setItem('accessToken', data.accessToken)
-      localStorage.setItem('refreshToken', data.refreshToken)
-      window.location.href = './html/users.html'
-    } catch (error) {
-      console.error('lỗi khi login', error)
-    } finally {
-      hideLoading()
-      isSubmitting = false
+    const payload = {
+      username: username.value.trim(),
+      password: password.value.trim(),
     }
+    login(payload)
+  })
+}
+
+let isSubmitting = false
+// fetch api
+async function login(payload) {
+  if (isSubmitting) return
+  isSubmitting = true
+  try {
+    showLoading()
+    const res = await fetch('https://dummyjson.com/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    if (!res.ok) {
+      const err = await res.json()
+      throw new Error(err.message || 'Login failed')
+    }
+    const data = await res.json()
+    localStorage.setItem('accessToken', data.accessToken)
+    localStorage.setItem('refreshToken', data.refreshToken)
+    window.location.href = './html/users.html'
+  } catch (error) {
+    console.error('lỗi khi login', error)
+  } finally {
+    hideLoading()
+    isSubmitting = false
   }
 }

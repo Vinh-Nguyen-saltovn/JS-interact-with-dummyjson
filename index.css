@@ -162,7 +162,8 @@ table td {
 }
 /* ****************
 add new page */
-#user-form {
+#user-form-add,
+#user-form-edit {
   width: 500px;
 }
 

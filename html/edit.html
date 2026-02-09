@@ -7,11 +7,7 @@
   </head>
   <body>
     <h1>User Detail</h1>
-
-    <div id="detail-loading" class="loading hidden">Loading...</div>
-    <div id="detail-error" class="error-box hidden"></div>
-
-    <form id="user-form">
+    <form id="user-form-edit">
       <div class="user-form-cover">
         <label>First Name</label>
         <input type="text" name="firstName" />
@@ -51,6 +47,17 @@
         <button id="delete-btn" type="button">Delete</button>
       </section>
     </form>
-    <script type="module" src="../js/form.js"></script>
+    <div id="users-loading" class="loading hidden">
+      <div class="spinner"></div>
+    </div>
+    <div id="users-error" class="error-box hidden"></div>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script type="module" src="../js/edit-form.js"></script>
   </body>
 </html>

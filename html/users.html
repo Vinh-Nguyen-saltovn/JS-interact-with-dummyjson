@@ -15,7 +15,6 @@
         <button id="btn-logout">Logout</button>
       </div>
     </header>
-
     <h1>Users List</h1>
 
     <!-- FILTER -->
@@ -23,7 +22,6 @@
       <form id="filter-form">
         <input type="text" placeholder="Search name..." name="search" />
         <button id="btn-search" type="button">Search</button>
-
         <select name="sortBy">
           <option value="">Sort By</option>
           <option value="firstName">First Name</option>
@@ -37,14 +35,8 @@
 
         <button id="btn-sort" type="button">Sort</button>
       </form>
-
       <a class="add-new-button" href="./add_new.html">➕ Add User</a>
     </div>
-
-    <div id="users-loading" class="loading hidden">
-      <div class="spinner"></div>
-    </div>
-    <div id="users-error" class="error-box hidden"></div>
 
     <table id="users-table">
       <thead>
@@ -68,6 +60,15 @@
       <span id="page-info">Page 1</span>
       <button id="next-page">Next</button>
     </div>
+    <div id="users-loading" class="loading hidden">
+      <div class="spinner"></div>
+    </div>
+    <div id="users-error" class="error-box hidden"></div>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="../js/users.js"></script>
   </body>
 </html>
