@@ -1,11 +1,13 @@
 {
   "name": "JS-interact-with-dummyjson-main",
-  "version": "1.0.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "eslint": "^9.39.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.8.1"
@@ -14,13 +16,6 @@
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --max-warnings=0 --",
       "prettier --write"
-    ],
-    "**/*.{css,html,json,md}": [
-      "prettier --write"
     ]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "format": "prettier --write ."
   }
 }
