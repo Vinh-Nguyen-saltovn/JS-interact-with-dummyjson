@@ -12,5 +12,9 @@
       "eslint --max-warnings=0 --",
       "prettier --write"
     ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write ."
   }
 }
