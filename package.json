@@ -11,8 +11,11 @@
     "prettier": "^3.8.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "eslint --max-warnings=0 --",
+      "prettier --write"
+    ],
+    "**/*.{css,html,json,md}": [
       "prettier --write"
     ]
   },
