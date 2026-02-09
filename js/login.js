@@ -43,7 +43,7 @@ if (form) {
     login()
   })
 
-  const isSubmitting = false
+  let isSubmitting = false
   // fetch api
   async function login() {
     if (isSubmitting) return
